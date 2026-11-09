@@ -20,3 +20,17 @@ print("-----------+ Por agregación +-----------")
 print(agrupado['Horas_Capacitacion'].mean())
 # Evaluacion del desempeño de cada empleado
 print(agrupado['Evaluacion_Desempeno'].max())
+
+
+print("--Arath---------+ Parte 2 +---------0148--")
+print("+--+--+-+ Agregaciones multiples +---+--+--+")
+print("Mean --> PROMEDIO, sum --> SUMA, ")
+print("max --> MAXIMO, min --> MINIMO")
+resultado_agregado = agrupado['Horas_Capacitacion'].agg(['mean', 'sum', 'max', 'min'])
+print(resultado_agregado)
+print("-----------+ Agrupacion por varias columnas +-----------")
+print("Agrega otra columna al DataFrame (Marco de Datos)")
+print("Columna 'teams' (Equipo)")
+df['Equipo'] = ['A','B','A','B','A','B']
+agrupado_multiple = df.groupby(['Departamento', 'Equipo'])['Evaluacion_Desempeno'].mean()
+print(agrupado_multiple)
